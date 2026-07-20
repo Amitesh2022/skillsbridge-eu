@@ -1,0 +1,2 @@
+<script setup lang="ts">import{RouterLink,RouterView}from'vue-router';import{useSkillsStore}from'./store';const store=useSkillsStore()</script>
+<template><div class="shell"><header><RouterLink class="brand" to="/">Skills<span>Bridge</span></RouterLink><nav><RouterLink to="/">Opportunity map</RouterLink><RouterLink to="/watchlist">My pathways <b>{{store.saved.length}}</b></RouterLink><RouterLink to="/studio">Workforce planner</RouterLink></nav><div class="avatar">AM</div></header><RouterView/></div></template>

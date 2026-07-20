@@ -1,0 +1,9 @@
+import{computed,ref}from'vue';import{defineStore}from'pinia'
+export type Programme={id:number;title:string;provider:string;domain:string;level:string;duration:string;match:number;tone:string;featured?:boolean}
+export const useSkillsStore=defineStore('skills',()=>{const programmes=ref<Programme[]>([
+ {id:1,title:'EU AI Governance Practitioner',provider:'Brussels Digital Academy',domain:'Responsible AI',level:'Advanced',duration:'6 weeks',match:96,tone:'violet',featured:true},
+ {id:2,title:'Cyber Resilience Operations',provider:'Secure Europe Lab',domain:'Cybersecurity',level:'Advanced',duration:'8 weeks',match:91,tone:'blue'},
+ {id:3,title:'Sustainable Finance Foundations',provider:'Capital Skills Network',domain:'Finance',level:'Intermediate',duration:'4 weeks',match:88,tone:'green'},
+ {id:4,title:'Multilingual Service Design',provider:'Civic Design School',domain:'Public service',level:'Intermediate',duration:'5 weeks',match:93,tone:'coral'},
+ {id:5,title:'Data Space Product Leadership',provider:'European Data Institute',domain:'Data',level:'Advanced',duration:'7 weeks',match:86,tone:'amber'},
+ {id:6,title:'Building Renovation Analytics',provider:'Green Transition Campus',domain:'Energy',level:'Intermediate',duration:'4 weeks',match:82,tone:'rose'}]);const saved=ref<number[]>([2,4]);const cohorts=ref<{title:string;team:string;seats:number;status:string}[]>([{title:'Responsible AI leads',team:'Policy & Risk',seats:18,status:'Enrolling'}]);const savedItems=computed(()=>programmes.value.filter(x=>saved.value.includes(x.id)));const toggleSaved=(id:number)=>{saved.value=saved.value.includes(id)?saved.value.filter(x=>x!==id):[...saved.value,id]};const createCohort=(title:string,team:string,seats:number)=>cohorts.value.unshift({title,team,seats,status:'Draft'});return{programmes,saved,savedItems,cohorts,toggleSaved,createCohort}})
