@@ -1,0 +1,6 @@
+com/amitesh/portfolio/skillsbridgeeu/api/PortfolioController.class
+com/amitesh/portfolio/skillsbridgeeu/service/PortfolioService.class
+com/amitesh/portfolio/skillsbridgeeu/domain/PortfolioRecord.class
+com/amitesh/portfolio/skillsbridgeeu/api/ApiExceptionHandler.class
+com/amitesh/portfolio/skillsbridgeeu/api/CreateRecordRequest.class
+com/amitesh/portfolio/skillsbridgeeu/PortfolioApplication.class
